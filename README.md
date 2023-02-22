@@ -1,4 +1,4 @@
-# imageParse2Text
+# image to text parser
 
 1.  add new file to 'images' folder.
 
