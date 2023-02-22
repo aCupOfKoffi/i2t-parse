@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>parsing</title>
+</head>
+<body>
+    <div class="container">
+        <canvas id="canvas" class="canvas" />
+    </div>
+    <div>
+        <canvas id="res-canvas" />
+    </div>
+    <span class="copy">
+        <img src="./assets/copy.svg" alt="copy" />
+    </span>
+        <p class="color"></p>
+    <input value="140" class="saturation" type="range" min="-256" max="255" />
+    <input checked class="reverse" type="checkbox" />
+    <input checked class="isDark" type="checkbox" />
+    <input value="70" class="resolution" type="range" />
+    <script src="index.js"></script>
+</body>
+</html>
