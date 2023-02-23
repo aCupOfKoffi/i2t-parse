@@ -58,8 +58,9 @@ copy.addEventListener('click', (e) => {
     let content = '';
     for (item of lines) {
         content += `${item.textContent}\n`;
-        fs++;
+        lineQuantity++;
     }
+    console.log(content)
     navigator.clipboard.writeText(content)
 })
 
@@ -93,6 +94,9 @@ const parse = () => {
             // resContext.fillRect(x, y, width/100, height/50);
         }
         color.append(line);
+    }
+    if (color.childElementCount == 0) {
+        color.textContent = 'Reload the page';
     }
 }
 parse();
