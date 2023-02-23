@@ -7,14 +7,16 @@ let canvas = document.getElementById('canvas'),
     theme = document.querySelector('.isDark'),
     resHandler = document.querySelector('.resolution'),
     copy = document.querySelector('.copy'),
-    copyLines = document.getElementsByClassName('line');
+    lines = document.getElementsByClassName('line');
 
 const context = canvas.getContext('2d'),
     resContext = resCanvas.getContext('2d');
 let resolution = 70,
     saturation = 140,
     isReversed = true,
-    isDark = true;
+    isDark = true,
+    lineQuantity = 5;
+
 const colorbet = '$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft|()1{}[]?<>i!lI;:,"^`\'. ';
     
 
@@ -52,10 +54,12 @@ resHandler.addEventListener('input', (e) => {
 })
 
 copy.addEventListener('click', (e) => {
+    lineQuantity = 0;
     let content = '';
-    for (item of copyLines) {
+    for (item of lines) {
         content += `${item.textContent}\n`;
-    }    
+        fs++;
+    }
     navigator.clipboard.writeText(content)
 })
 
@@ -68,6 +72,7 @@ updateTheme();
 
 const parse = () => {
     color.textContent = '';
+    color.style.fontSize = `${350/resolution}px`;
     for (let y = 0; y < height; y += 2*height/resolution) {
         let line = document.createElement('p');
         line.classList.add('line');
@@ -84,9 +89,10 @@ const parse = () => {
             }
             char = char === ' ' ? '\u00A0' : char; 
             line.textContent += char;
-            resContext.fillStyle = `rgb(${brightness}, ${brightness}, ${brightness})`;
-            resContext.fillRect(x, y, width/100, height/50);
+            // resContext.fillStyle = `rgb(${brightness}, ${brightness}, ${brightness})`;
+            // resContext.fillRect(x, y, width/100, height/50);
         }
         color.append(line);
     }
 }
+parse();

@@ -20,7 +20,7 @@ canvas {
 
 p {
     margin: 0;
-    height: calc(20px/3);
+    /* height: calc(20px/3); */
     background-color: inherit;
     /* width: 10rem; */
 }
@@ -34,8 +34,6 @@ p {
     /* background-color: white; */
     border-radius: 5px;
 }
-
-
 
 .copy img {
     height: inherit;
